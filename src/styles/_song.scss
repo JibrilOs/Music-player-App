@@ -6,6 +6,34 @@ display: flex;
 flex-direction: column;
 align-items:center;
 justify-content:center ;
+padding-top: 1rem;
+
+// img for the cover page of the artist
+
+img{
+
+width:25%;
+border-radius: 50%;
+
+// making the animation and making the cover image the rotate infinite 
+animation: rotate 20s linear infinite;
+@keyframes rotate {
+  0% {
+transform: rotate(0deg);  }
+  100% {
+      transform: rotate(360deg); 
+  }
+}
+// making the animation and making the cover image the rotate infinite 
+
+
+}
+
+
+h2{
+
+    padding: 2rem 1rem 1rem 1rem;
+}
 
 
 

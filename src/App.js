@@ -10,10 +10,11 @@ import Player from "./components/Player";
 import "./styles/App.scss";
 function App() {
   //adding state
-  const [songs, setSongs] = useState(Chillhop());
+  const [songs, setSongs] = useState(Chillhop);
+  const [currentSong, setCurrentSong] = useState(songs[0]);
   return (
     <div className="">
-      <Song />
+      <Song currentSong={currentSong} />
       <Player />
     </div>
   );
