@@ -12,10 +12,17 @@ function App() {
   //adding state
   const [songs, setSongs] = useState(Chillhop);
   const [currentSong, setCurrentSong] = useState(songs[0]);
+
+  //this state controls the playing and pausing of the song
+  const [isPlaying, setIsPlaying] = useState(false);
   return (
     <div className="">
       <Song currentSong={currentSong} />
-      <Player />
+      <Player
+        currentSong={currentSong}
+        isPlaying={isPlaying}
+        setIsPlaying={setIsPlaying}
+      />
     </div>
   );
 }
