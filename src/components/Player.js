@@ -36,25 +36,51 @@ const Player = (props) => {
 const timeUpDateHandler=(e)=>{
 const current=e.target.currentTime // you can access the event and also check its methods and properties
 const duration=e.target.duration
-setSongInfo({...songInfo,currentTime:current,duration})
+setSongInfo({...songInfo,currentTime:current,duration,})
 
 }
 
-// fucntion to format the startingtime and ending time
+// function to format the startingtime and ending time
 const getTime=(time)=>{
   //this math.floor method formats the time into seconds and minutes
 return Math.floor(time / 60) + ":" + ("0" +Math.floor(time % 60 )).slice(-2)
   
 }
 
-  //state for the currrent time for the player
+//function to make the range slider dragable
+//first we add an onchange event to the input and create a state where we link the event.target.value of the event handler to the value of the input element
+
+const handleDragAble=(e)=>{
+
+  audioRef.current.currentTime=e.target.value // we also need to update the audioRef.Currentime to that of the value
+ setSongInfo({
+   ...songInfo,
+   currentTime: e.target.value , //this makes it draggable,
+   
+ });
+}
+
+  //state for the currrent time for the player 
+  //
+   //fixing error of uncontrollable component  which th value of the input tag is null
+   // when the app is renderred.to fix that we need to update the currentime value 
+
+  
+  
+  //
   const [songInfo,   setSongInfo]   =   useState({currentTime:null,duration:null});
 
   return (
     <div className="player">
       <div className="time-control">
         <p>{getTime(songInfo.currentTime)}</p>
-        <input type="range" />
+        <input
+          type="range"
+          min={0}
+          max={songInfo.duration}
+          value={songInfo.currentTime}
+          onChange={handleDragAble}
+        />
         <p>{getTime(songInfo.duration)}</p>
       </div>
       <div className="play-control">
@@ -75,7 +101,8 @@ return Math.floor(time / 60) + ":" + ("0" +Math.floor(time % 60 )).slice(-2)
       <audio
         ref={audioRef}
         onTimeUpdate={timeUpDateHandler}
-        src={currentSong.audio} onLoadedMetadata={timeUpDateHandler}
+        src={currentSong.audio}
+        onLoadedMetadata={timeUpDateHandler} 
       ></audio>
     </div>
   );
