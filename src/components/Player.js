@@ -68,7 +68,7 @@ const handleDragAble=(e)=>{
   
   
   //
-  const [songInfo,   setSongInfo]   =   useState({currentTime:null,duration:null});
+  const [songInfo, setSongInfo] = useState({ currentTime: "", duration: 0 });
 
   return (
     <div className="player">

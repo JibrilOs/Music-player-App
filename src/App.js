@@ -8,6 +8,7 @@ import Song from "./components/Song";
 import Player from "./components/Player";
 //importing  styles
 import "./styles/App.scss";
+import Library from "./components/Library";
 function App() {
   //adding state
   const [songs, setSongs] = useState(Chillhop);
@@ -23,6 +24,8 @@ function App() {
         isPlaying={isPlaying}
         setIsPlaying={setIsPlaying}
       />
+
+      <Library Songs={songs} />
     </div>
   );
 }
