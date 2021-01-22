@@ -1,18 +1,26 @@
 import React from "react";
 import LibrarySong from "./LibrarySong";
 
-const Library = ({ Songs, SetCurrentSong }) => {
+const Library = ({
+  Songs,
+  SetCurrentSong,
+  audioRef,
+  isPlaying,
+  setIsPlaying,
+}) => {
   return (
     <div className="library-container">
       <h2>Library</h2>
       <div className="librarysongs-container">
-        { Songs.map((song,  id) => {
+        {Songs.map((song) => {
           return (
             <LibrarySong
               Song={song}
               key={song.id}
-              Id={id}
               SetCurrentSong={SetCurrentSong}
+              audioRef={audioRef}
+              isPlaying={isPlaying}
+              setIsPlaying={setIsPlaying}
             />
           );
         })}

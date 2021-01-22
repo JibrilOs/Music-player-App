@@ -1,1 +1,1 @@
-this a music-player created by me Jibril 
+This a music-player created by me Jibril and the playlist are music i can use without copyright infringement.

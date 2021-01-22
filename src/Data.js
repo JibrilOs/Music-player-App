@@ -82,6 +82,17 @@ function chillHop() {
       id: uuidv4(),
       active: false,
     },
+    {
+      name: "Extra-Time❤❤❤",
+      cover:
+        "https://chillhop.com/wp-content/uploads/2020/06/49f6e32ca521fbad46a1b281e3893cf6254bf11d-300x300.jpg",
+      artist: "Musuka",
+      audio:
+        "https://cdn.zambianplay.com/wp-content/uploads/2019/02/Abel-Chungu-Musuka-Extra-Time-Prod.-By-KB.mp3?_=1",
+      color: ["#205950", "#2ab3bf"],
+      id: uuidv4(),
+      active: false,
+    },
     //ADD MORE HERE
   ];
 }
