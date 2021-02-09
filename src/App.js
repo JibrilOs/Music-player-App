@@ -7,7 +7,6 @@ import Chillhop from "./Data"
 import Song from "./components/Song";
 import Player from "./components/Player";
 //importing  styles
-import "./styles/App.scss";
 import Library from "./components/Library";
 function App() {
   //todo======Audi0Ref=================
