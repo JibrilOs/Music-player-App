@@ -46,7 +46,7 @@ function App() {
   //comment========EventHandlers Ending========
 
   return (
-    <div className="">
+    <div className="container">
       <Song currentSong={currentSong} />
       <Player
         currentSong={currentSong}
